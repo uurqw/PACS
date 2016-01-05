@@ -1,0 +1,177 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+
+html,body{
+	height: 100%;
+}
+
+body{
+	background-color: #89D9F2;
+}
+
+li{
+	list-style: none;
+	display: inline-block;
+	width: 280px;
+	margin-bottom: 14px;
+}
+
+.wrap{
+	width: 990px;
+	height: 94%;
+	margin: 20px auto 10px;
+	background-color: #fff;
+	border-radius: 4px;
+}
+
+.wrap .title{
+	background-color: #0180b7;
+	border-top-right-radius: 4px;
+	border-top-left-radius: 4px;
+
+}
+
+.wrap .title h1{
+	font-size: 20px;
+	font-weight: 400;
+	color: #fff;
+	padding: 10px 14px;
+	display: inline-block;
+}
+
+.wrap .title .cur-time{
+	font-size: 12px;
+	color: #ddd;
+	float: right;
+	margin-right: 14px;
+	line-height: 50px;
+}
+
+.patient-id{
+	/* 这里设置block或者none */
+	display: block;
+	width: 300px;
+	height: 180px;
+	margin: 180px auto;
+	border: 1px solid #0180b7;
+	border-radius: 2px;
+	text-align: center;
+}
+
+.patient-id label{
+	display: block;
+	padding-top: 30px;
+	padding-bottom: 14px;
+}
+
+.patient-id input{
+	height: 28px;
+	width: 180px;
+	outline: none;
+	font-size: 18px;
+	text-indent: 6px;
+}
+
+.patient-id button{
+	height: 28px;
+	width: 80px;
+	display: block;
+	margin: 14px auto;
+	border: 0;
+	background-color: rgba(1,128,183,0.9);
+	border-radius: 2px;
+	color: #fff;
+	cursor: pointer;
+	font-size: 14px;
+	outline: none;
+}
+
+.patient-id button:hover{
+	background-color: rgba(1,128,183,1);
+}
+
+
+.wrap .form-wrap{
+}
+
+.wrap .form-wrap .form-info{
+	padding: 30px 60px 10px;
+	background-color: rgba(226,224,255,0.3);
+}
+
+.wrap .form-wrap .patient-info{
+	padding: 30px 60px 10px;
+}
+
+.wrap .form-wrap .illness-info{
+	padding: 30px 60px 10px;
+	background-color: rgba(226,224,255,0.3);
+}
+
+.wrap .form-wrap .illness-info li{
+	width: 268px;
+	margin-right: 300px;
+}
+
+.wrap .form-wrap .illness-info li:nth-child(even){
+	margin-right: 0;
+}
+
+.wrap .form-wrap .illness-info li label{
+	margin-right: 20px;
+}
+
+.wrap .form-wrap .illness-info li input{
+	margin-left: 20px;
+}
+
+.wrap .form-wrap .illness-info li input,.wrap .form-wrap .illness-info li label{
+	cursor: pointer;
+}
+
+.wrap .form-wrap .extra-info{
+	padding: 30px 60px 10px;
+}
+
+.wrap .form-wrap .extra-info textarea{
+	margin-top: 14px;
+	resize:none;
+	width: 100%;
+	height: 168px;
+	outline: none;
+	font-size: 18px;
+	padding: 6px;
+}
+
+.wrap .form-wrap .btn-info a{
+	display: block;
+	height: 32px;
+	width: 180px;
+	background-color: rgba(1,128,183,0.9);
+	text-align: center;
+	text-decoration: none;
+	line-height: 32px;
+	color: #fff;
+	border-radius: 2px;
+}
+
+.wrap .form-wrap .btn-info{
+	padding: 10px 390px;
+}
+.wrap .form-wrap .btn-info a:hover{
+	background-color: rgba(1,128,183,1);
+}
+#form-wrap{
+	display:none;
+}
+#errorMes{
+	color:red;
+}
+.center{
+	text-align: center;
+	line-height: 100%
+	height:100%;
+	width:100%;
+}

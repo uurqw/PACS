@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+
+<struts>
+  
+     <!-- setting encoding,DynamicMethod,language 
+     <constant name="struts.custom.i18n.resources" value="messageResource"></constant>
+     -->
+     <constant name="struts.i18n.encoding" value="UTF-8"></constant>
+     <constant name="struts.enable.DynamicMethodInvocation" value="true"></constant>
+     <constant name="struts.ui.theme" value="simple"/>
+    
+     <!-- add package here extends="struts-default"-->
+     <package name="PACS" extends="json-default"> <!--需要将struts-default改为json-default-->
+			 <!-- 用户拦截器定义在该元素下 -->
+				<interceptors>
+					<!-- 定义了一个名为authority的拦截器 -->
+					<interceptor name="authority" class="interceptor.AuthorityInterceptor"></interceptor>
+					<!-- 拦截器栈 -->  
+	            	<interceptor-stack name="mydefault">  
+		                <interceptor-ref name="defaultStack" />  
+		                <interceptor-ref name="authority" />
+            		</interceptor-stack>
+				</interceptors>
+
+				<!-- 定义全局Result -->
+				<global-results>
+					<!-- 当返回login视图名时，转入loginForm.jsp页面 -->
+					<result name="login">/View/Login.jsp</result>
+				</global-results>
+
+				<action name="Operate_*" class="action.Operate" method="{1}">
+					<result name="error">error.jsp</result>
+					<!-- 登陆成功跳转到会诊页面  -->
+					<!-- 
+						<result name="initsuccess">/View/Test.jsp</result>
+					-->
+					<!-- 查询成功跳转到ReportView页面
+					<result name="success">/WEB-INF/ReportView.html</result>
+					 -->
+					<result name="json" type="json">
+		            	<param name="noCache">true</param>
+		                <param name="contentType">text/html</param>
+		                <param name="root">map</param>
+					</result>
+					<!-- 使用此拦截器 -->  
+            		<interceptor-ref name="mydefault" ></interceptor-ref>
+				</action>
+
+							
+			  <!-- 定义其它的Action -->
+
+	
+     
+     <!-- 
+         <action name="checkUser" class="com.xy.first.action.UserAction" method="checkUser">
+				<result name="success" type="redirectAction">/getUserList.action</result>
+				<result name="error">/login.jsp</result>
+		 </action>
+				   
+		   <action name="getUserList" class="com.xy.first.action.UserAction" method="getAllUser">
+				<result name="success">/WEB-INF/regedit/user_list.jsp</result>
+				<result name="error">/login.jsp</result>
+		   </action>
+				   
+		    <action name="regedit" class="com.xy.first.action.UserAction" method="regedit">
+				<result name="success">/WEB-INF/regedit/success.jsp</result>
+				<result name="error">/regedit.jsp</result>
+				<result name="input">/regedit.jsp</result>
+		   </action>
+				   
+		   <action name="viewUser" class="com.xy.first.action.UserAction" method="viewUser">
+				<result name="success">/WEB-INF/regedit/user_view.jsp</result>
+				<result name="error">/login.jsp</result>
+		   </action>
+				   
+		   <action name="changeInformation" class="com.xy.first.action.UserAction" method="doChange">
+				<result name="success" type="redirectAction">/getUserList.action</result>
+				<result name="error">/login.jsp</result>
+		   </action>
+				   
+		   <action name="deleteUser" class="com.xy.first.action.UserAction" method="deleteUser">
+				<result name="success" type="redirectAction">/getUserList.action</result>
+				<result name="error ">/login.jsp</result>			
+		 </action>
+	  -->
+	  	<!-- 定义一个名为viewBook的Action，其实现类为ActionSupport -->
+			<action name="viewBook">
+				<!-- 返回success视图名时，转入viewBook.jsp页面 -->
+				<result>/WEB-INF/content/viewBook.jsp</result>
+				<interceptor-ref name="defaultStack"/>
+				<!-- 应用自定义拦截器 -->
+				<interceptor-ref name="authority"/>
+			</action>
+
+		<!-- 所有JSP的对应action -->
+		 	<action name="*">
+					<result>/View/{1}.jsp</result>
+			</action>
+  </package>
+</struts>
+
+   

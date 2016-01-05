@@ -1,0 +1,102 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+
+
+html,body{
+	height: 100%;
+}
+
+body{
+	background-color: #89D9F2;
+}
+
+.wrap{
+	width: 990px;
+	background-color: #fff;
+	margin: 46px auto 0;
+	position: relative;
+}
+
+.wrap .time-info{
+	position: absolute;
+	right: 0;
+	top: -34px;
+}
+
+.wrap .time-info select{
+	height: 26px;
+	vertical-align: middle;
+	outline: none;
+}
+
+.wrap ul li{
+	list-style-type: none;
+}
+
+.wrap .title-info li{
+	display: inline-block;
+	width: 286px;
+	margin: 0 auto;
+	font-size: 12px;
+	color: #aaa;
+}
+
+.wrap .title-info{
+	padding: 10px 52px;
+	border: 1px dotted #ccc;
+}
+
+.wrap .patient-info{
+	padding: 10px 52px;
+}
+
+.wrap .patient-info li{
+	margin: 10px 0;
+}
+
+.wrap .illness-info{
+	padding: 10px 52px;
+}
+
+.wrap .illness-info li{
+	margin: 10px 0;
+}
+
+.wrap .extra-info{
+	padding: 10px 52px;
+}
+
+.wrap .extra-info .extra-txt{
+	width: 100%;
+	height: 100px;
+	border: 1px solid #ccc;
+	margin-top: 10px;
+
+}
+
+.wrap .btn-info{
+	width: 290px;
+	margin: 0 auto;
+}
+
+.wrap .btn-info a{
+	display: inline-block;
+	color: #fff;
+	width: 120px;
+	height: 32px;
+	background-color: rgba(1,128,183,0.9);
+	border: 0;
+	outline: none;
+	text-decoration: none;
+	text-align: center;
+	line-height: 32px;
+	border-radius: 2px;
+	margin: 30px 0;
+	margin-right: 19px;
+}
+
+.wrap .btn-info a:hover{
+	background-color: rgba(1,128,183,1);
+}
